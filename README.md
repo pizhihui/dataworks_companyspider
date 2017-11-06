@@ -27,9 +27,8 @@ nohup /opt/company_auto_input/redis_input.sh /opt/logs/redis_input.log 2>&1 &
 中国银行业监督管理委员会: http://www.cbrc.gov.cn/chinese/jrjg/index.html <br>
 中国证券监督管理委员会: http://fund.csrc.gov.cn/web/sales_show.organization?type=1
 
-使用的xpath表达式是: 
+使用的xpath表达式是: <br>
 //table[@bgcolor="#8197A3"]//tr[position()>1]/td[2]
-
 
 //*[@id="ess_ctr16712_OrganizationList_rptCompany"]//a/text()
 
