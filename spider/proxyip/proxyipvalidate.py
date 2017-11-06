@@ -25,11 +25,11 @@ class Proxies(object):
             'Accept-Encoding': 'gzip, deflate',
         }
         self.test_url = 'https://www.baidu.com/'
-        #self.test_url = 'http://qiye.qianzhan.com/'
+        # self.test_url = 'http://qiye.qianzhan.com/'
         self.requestHeader = {'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"}
         self.daxiang_proxy_url = 'http://vtp.daxiangdaili.com/ip/?tid=556367928768689&num=100&operator=1,2,3&delay=3&filter=off&format=json&longlife=20&protocol=http'
         self.finippool_url = 'http://127.0.0.1:8000/?types=0&count=20&country=国内&protocol=0'
-        self.zdaye_url = 'http://10.211.55.3:52880/api.do?filter=1&num=1'
+        self.zdaye_url = 'http://10.10.4.33:52880/api.do?filter=1&num=1'
         self.ip_val = []
 
     def get_proxies_daxiang(self):

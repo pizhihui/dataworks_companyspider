@@ -54,8 +54,8 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 120,
-    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 123,
-    # 'spider.middlewares.IPPOOLS': 124,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 123,
+    'spider.middlewares.IPPOOLS': 124,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': 125,
     'spider.middlewares.UAPOOLS': 126,
     'spider.middlewares.QichabaoCookieMiddleware': 200
