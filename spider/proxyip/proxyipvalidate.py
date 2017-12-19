@@ -24,7 +24,7 @@ class Proxies(object):
             'Connection': 'keep-alive',
             'Accept-Encoding': 'gzip, deflate',
         }
-        self.test_url = 'https://www.baidu.com/'
+        self.test_url = 'https://www.baidu.com'
         # self.test_url = 'http://qiye.qianzhan.com/'
         self.requestHeader = {'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"}
         self.daxiang_proxy_url = 'http://vtp.daxiangdaili.com/ip/?tid=556367928768689&num=100&operator=1,2,3&delay=3&filter=off&format=json&longlife=20&protocol=http'
@@ -75,18 +75,18 @@ class Proxies(object):
         :return:
         """
         res = urllib.urlopen(self.zdaye_url).read()
-        oj = res.split('\r\n')
-        for ip in oj:
-            try:
-                ip_tmp = 'http://' + ip
-                requests.get(self.test_url, headers=self.header, proxies={'http': 'http://' + ip_tmp})
-                #res = urllib.urlopen(self.test_url, proxies={'http': ip_tmp}).read()
-                self.ip_val.append(ip_tmp)
-            except BaseException, e:
-                logger.error("---Failure:  {}", e)
-                continue
+        # oj = res.split('\r\n')
+        # for ip in oj:
+        #     try:
+        #         ip_tmp = 'http://' + ip
+        #         requests.get(self.test_url, headers=self.header, proxies={'http': 'http://' + ip_tmp})
+        #         #res = urllib.urlopen(self.test_url, proxies={'http': ip_tmp}).read()
+        #         self.ip_val.append(ip_tmp)
+        #     except BaseException, e:
+        #         logger.error("---Failure:  {}", e)
+        #         continue
 
-        return self.ip_val
+        return 'http://' + res
 
 if __name__ == "__main__":
     p = Proxies()

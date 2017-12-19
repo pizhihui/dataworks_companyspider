@@ -6,6 +6,7 @@
 nohup scrapy crawl qichabao_url > /opt/logs/qichabao_url_1.log 2>&1 &
 nohup scrapy crawl qichabao_url > /opt/logs/qichabao_url_2.log 2>&1 &
 nohup scrapy crawl qichabao_url > /opt/logs/qichabao_url_3.log 2>&1 &
+nohup scrapy crawl qichabao_url > /opt/logs/qichabao_url_4.log 2>&1 &
 
 nohup scrapy crawl qichabao_com > /opt/logs/qichabao_com_1.log 2>&1 &
 nohup scrapy crawl qichabao_com > /opt/logs/qichabao_com_2.log 2>&1 &
@@ -17,6 +18,7 @@ nohup scrapy crawl qichabao_com > /opt/logs/qichabao_com_7.log 2>&1 &
 nohup scrapy crawl qichabao_com > /opt/logs/qichabao_com_8.log 2>&1 &
 
 
+测试公司: 华商银行
 nohup /opt/company_auto_input/redis_input.sh /opt/logs/redis_input.log 2>&1 &
 
 
@@ -43,3 +45,9 @@ nohup /opt/company_auto_input/redis_input.sh /opt/logs/redis_input.log 2>&1 &
 //*[@id="ess_ctr16720_OrganizationList_rptCompany"]//a/text()
 
 //*[@id="ess_ctr26624_OrganizationList_rptCompany"]//a/text()
+
+
+
+## 测试该bug的地址
+http://qiye.qianzhan.com/orgcompany/searchitemdtl/73b8f602258ba70ea91930b82ede671d.html  测试主要成股东信息没有的时候
+http://qiye.qianzhan.com/orgcompany/searchitemdtl/a6b63ddacc1fc83bd2211fd324e3c0ca.html  测试机构有更多的时候

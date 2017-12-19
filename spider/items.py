@@ -7,12 +7,16 @@ from scrapy.item import Item, Field
 from scrapy.exceptions import DropItem
 
 
+
+
 class RequiredFieldItem(Item):
     def validate(self):
         for required_field in self.required_fields:
             if required_field not in self or self[required_field] is None:
                 raise DropItem('not field %s' % required_field)
 
+class CompanyNameItem(Item):
+    name = Field()
 
 class HBaseItem(RequiredFieldItem):
 

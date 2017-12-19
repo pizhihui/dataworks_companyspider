@@ -50,7 +50,15 @@ class IPPOOLS(HttpProxyMiddleware):
         """随机从代理池中读取proxy"""
         p = Proxies()
         proxies = p.get_proxies_zdaye()
-        proxy = random.choice(proxies).strip()
+        # while True:
+        #     try:
+        #         proxies = p.get_proxies_zdaye()
+        #         #proxy = random.choice(proxies).strip()
+        #         requests.get("http://qiye.qianzhan.com/",proxies={'http': proxies})
+        #         break
+        #     except BaseException:
+        #         continue
+
         # while 1:
         #     proxies = p.get_proxies_zdaye()
         #     if proxies:
@@ -68,7 +76,7 @@ class IPPOOLS(HttpProxyMiddleware):
         #     except BaseException, e:
         #         continue
 
-        return proxy
+        return proxies
 
     def get_random_proxy_byfile(self):
         """

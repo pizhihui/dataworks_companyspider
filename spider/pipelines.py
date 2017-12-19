@@ -6,6 +6,18 @@ import datetime
 import requests
 import logging
 
+class FileWriterPipeline(object):
+
+    def open_spider(self, spider):
+        self.file = open('company.txt', 'w')
+
+    def close_spider(self, spider):
+        self.file.close()
+
+    def process_item(self, item, spider):
+        for n in item['name']:
+            self.file.write(n.encode("utf-8") + '\n')
+        return item
 
 
 class HBaseItemPipeline(object):

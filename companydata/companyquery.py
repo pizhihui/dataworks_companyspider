@@ -77,15 +77,15 @@ def main():
     outFile.close()
 
 def hbase_query():
-    file_path_trg = os.getcwd() + "/allcompaydata_final.txt"
-    file_path_needed = os.getcwd() + "/company_needed.txt"
+    file_path_trg = os.getcwd() + "/allcompanydata_new.txt"
+    file_path_needed = os.getcwd() + "/company_last.txt"
 
     file_needed = open(file_path_needed, 'w')
 
     with open(file_path_trg, 'r') as f:
         companys = f.readlines()
         for com in companys:
-            row_key = hashlib.new("md5", com).hexdigest()
+            row_key = hashlib.new("md5", com.strip().replace('\n','')).hexdigest()
             data = {
                 "command": "getByRowKey",
                 "content": {

@@ -78,7 +78,7 @@ class QichabaoUrlSpider(RedisSpider):
         # 根据redis队列中的urls,得到相应,然后xpath取页面上的连接
         el = RawCorpItemLoader(response=response)
         urllist = response.xpath('//div[@class="wrap-f"]//div[@class="listsec_con"]/a[@class="listsec_tit"]/@href').extract()
-        for url in urllist[:2]:
+        for url in urllist[:1]:
             requesturl = urljoin(self.p_url, url)
             # 真正的公司连接放入另外的redis的key中
             PyRedis().get_redis().lpush('qichabao:start_urls', requesturl)
